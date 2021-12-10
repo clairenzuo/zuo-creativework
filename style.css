@@ -1,0 +1,814 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-size: 100% 100%;
+}
+
+
+
+body{
+    font-family: Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.logo {
+    font-size: 2em;
+    padding-left: 8%;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    font-weight: bold;
+
+}
+
+/*DARK/LIGHT MODE*/
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+    font-size: 3em; 
+    position: relative;
+    left: 85%;
+    padding-top: 1%;
+}
+
+/* LIGHT MODE - (actually black background as default) */
+  body.light {
+    background-color: black; 
+    color:black; 
+  }
+/*navbar*/
+
+  body.light a {
+    color:white;
+  }
+
+  /* DARK MODE (WHITE BG) */
+
+  body.dark {
+    background-color: white; 
+    color:black;
+  }
+  body.dark a {
+    color:black;
+  }
+
+  body.dark .logo {
+    color:black;
+  }
+
+  body.dark h1 {
+    color:black;
+  }
+
+  body.dark .main-text p{
+    color:black;
+  }
+
+  body.dark .image-gallery p{
+      color: black;
+  }
+
+  body.dark .about-me p{
+    color: black;
+}
+
+body.dark .body-text{
+    color: black;
+}
+
+body.dark .body-text h2 {
+    color: black;
+}
+
+body.dark .form label {
+    color: black;
+}
+
+body.dark .navbar .container-flex #active{
+    color: darkred;
+}
+
+body.dark .main-text h2 {
+    display: none;
+}   
+
+
+/* waving hand animation*/
+
+.wave {
+    animation-name: wavinghand; 
+    animation-duration: 5s;       /*speed of wave*/
+    animation-iteration-count: infinite; 
+    display: inline-block; 
+    transform-origin: 70% 70%;       /*pivot point of wave*/
+  }
+  
+  @keyframes wavinghand {
+      0% { transform: rotate( 0.0deg) }
+     10% { transform: rotate(20.0deg) }  /* more or less intense wave*/
+     20% { transform: rotate(-8.0deg) }
+     30% { transform: rotate(14.0deg) }
+     40% { transform: rotate(-4.0deg) }
+     50% { transform: rotate(10.0deg) }
+     60% { transform: rotate( 0.0deg) }  
+  }
+
+ul {
+    list-style-type: none;
+}
+
+.skip a{
+    left: 50%;
+    position: absolute;
+    transform: translateY(-100%);
+  }
+
+h1, h2 {    /* spacing for main header texts */
+    font-weight: 300px;
+    line-height: 1.2;
+    margin: 10px 0;
+    color: white;
+}
+
+ul li {
+    padding: 5px;
+    font-size: 1em;
+    padding-left: 5%;
+}
+
+.navbar{
+    height: 70px;
+    color: white;
+    position:
+}
+
+.navbar ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar a{
+    color: white;
+    padding: 10px;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.navbar .container-flex .logo {
+    padding-left: 9%;   
+    padding-top: 7%;
+}
+    
+
+/* Makes sure to show what page im on for navigation*/
+.navbar .container-flex #active{ 
+    text-decoration: underline 2px;
+    color:orange;
+    text-transform: uppercase;
+    font-weight: bold;
+}  
+
+
+.main-text h1{ /*main text in the middle of the page */
+    font-size: 3em;
+    padding-left: 8%;
+    padding-top: 35%;
+    color: white;
+    font-weight: bold;
+}
+
+.main-text p{
+    color: white;
+    font-size: 1em;
+    text-align: left;
+    padding-left: 8%;
+}
+
+.main-text h2{ /*fingerpointing alignment*/
+    font-size: 2.2em;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+footer p{
+    background-color: black;
+    color: white;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+}
+
+.wontainer{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    padding-top: 20%;
+}
+
+.one {
+    background: white;
+    background: rgb(255,228,240);
+    background: linear-gradient(99deg, rgba(255,228,240,1) 30%, rgba(201,148,233,1) 95%);
+}
+
+.two {
+    background: rgb(128,228,61);
+    background: linear-gradient(222deg, rgba(128,228,61,1) 24%, rgba(230,241,157,1) 58%, rgba(255,242,174,1) 72%);
+}
+
+/*change this for each screen size*/
+.one img{
+    width: 100vh;
+    padding-left: 3%;
+    padding-top: 30%;
+    padding-right: 5%;
+}
+.two img{
+   width: 85vw;
+   padding-top: 5%;
+   padding-left: 14%;
+}
+
+.scrolltext p{
+    font-size: 1em;
+    padding-left: 10%;
+    width: 90%;
+    padding-top: 15%;
+    padding-bottom: 10%;
+}
+
+.scrolltext2 p{
+    font-size: 1em;
+    padding-left: 10%;
+    width: 90%;
+    padding-top: 25%;
+}
+
+.title-text {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* red PROGRESS BAR */
+.progress-container {
+    width: 100%;
+    height: 3.5px;
+    background:white;
+    position: fixed;
+    top: 0%;
+  }
+  
+  .progress-bar {
+    height: 3.5px;
+    background:red;
+    width: 0%;
+  }
+
+/* UI/UX PAGE (GRID) *************************************************************************/
+
+.body-text {
+    text-align: left;
+    width: 90%;
+    padding-left: 10%;
+    color:white;
+    padding-bottom: 10%;
+}
+.image-galleryone {
+    display: grid;
+    padding-bottom: 10%;
+    padding-top: 30%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+.image-gallerytwo {
+    display: grid;
+    padding-bottom: 10%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+.body-text h2{ /*this changes the project title name */
+    font-size: 2em;
+    font-weight: bold; 
+}
+
+/* DESIGN PAGE *************************************************************************************/
+
+.container .image-gallery { 
+    padding-top: 9%;
+    padding-right: 5%;
+    width: 2000px;
+    padding: 5%;
+}
+
+.image-gallery p{
+    padding-top: 5%;
+    padding-bottom: 20%;
+    padding-right: 5%;
+    color: white;
+    padding-left: 5%;
+} 
+
+.image-gallery img{
+    padding-right: 7%;
+    padding-left: 7%;
+} 
+
+ .image-gallery .special-text {  /*making the titles of the song names bigger w/o messing up the formatting */
+    font-size: 2em;
+    font-weight: bold;
+    line-height: normal;
+}
+
+/* ABOUT PAGE **************************************************************************************/
+
+.about-me img {
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 20%;
+}
+.about-me p{
+    color: white;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top: 10%;
+    padding-bottom: 13%;
+}
+
+/*CONTACT PAGE**************************************************************************************************************************/
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: white;
+  }
+  
+  #message {
+    padding-bottom: 100px;}
+      
+  input[type=submit] {
+    width: 40%;
+    background-color: orange;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+
+  }
+  
+  input[type=submit]:hover {
+    background-color: #E88404;
+  }
+  
+  .form {
+    padding: 8%;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5em;
+    padding-top: 25%;
+    } 
+  }
+
+/*ARTWORK PAGE **************************************************************************************************************/
+  
+  section {
+    height: 60vh;
+}
+
+.parallaxscroll section {
+  background-size: 10vw; /* cut this*/
+  width: 100%;
+  background-size: cover;
+}
+
+.parallaxscroll section h1 {
+  color: transparent;}
+
+.parallaxscroll section:first-of-type {
+background-image: url(artwork1.jpg);
+}
+.parallaxscroll section:nth-of-type(2) {
+background-image: url(artwork2.jpg);
+}
+.parallaxscroll section:last-of-type {
+background-image: url(artwork3.jpg);
+}
+
+@media screen and (min-width: 750px){ /*tablet tablet viewtablet viewtablet viewtablet viewtablet viewtablet viewtablet viewtablet view*/
+
+    .label {
+        font-size: 5em; 
+    }
+    
+    .logo {
+            font-size: 4.25em;
+        }
+        
+        .navbar ul{
+        flex-direction: column;
+        align-content: flex-end;
+        align-items: flex-end;
+        padding-right: 5%;
+        padding-top: 10%;
+        }
+
+    
+        .navbar a{
+            font-size: 2em;
+        }
+      
+        /* MAKING MAIN PAGE TEXT BIGGER */
+
+        .main-text {
+            margin-top: -20%;
+        }
+        .main-text h1{
+            font-size: 5em;
+            padding-top: 23%;
+        }
+    
+        .main-text p{
+            font-size: 1.75em;
+            padding-bottom: 0%;
+        }
+    
+        .main-text h2{ /*fingerpointing */
+            font-size: 3.5em;
+        }    
+    
+    /* Home sceen scroll adjusting size */
+    
+    .one img{
+        width: 70vh;
+        padding-left: 5%;
+        padding-top: 10%;
+    }
+    .two img{
+       padding-top: 8%; 
+       padding-left:27%;
+       width: 75%;
+       padding-bottom: 10%;
+    }
+    
+    .scrolltext p{
+        font-size: 1.35em;
+        padding-left: 15%;
+        padding-top: 0%;
+    }
+    
+    .scrolltext2 p{
+        font-size: 1.35em;
+        padding-top: 10%;
+    }
+    
+    /*UI/UX PAGE**************************************************************************************/
+        .image-galleryone {
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto;
+            justify-content: center;
+            padding-bottom:5%; 
+            padding-top: 20%;
+        }
+    
+        .image-gallerytwo {
+            grid-template-columns: auto auto ;
+            grid-template-rows: auto auto auto;
+            justify-content: center;
+            padding-bottom: 5%; /*changing from 10 from the mobile to 5% */
+        }
+    
+    
+        .body-text { /*project descriptions*/
+        font-size: 1.8em;
+        width: 95%;
+        padding-left: 7%;
+        }
+    
+    /* DESIGN PAGE ***************************************************************************************/
+    
+     .image-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-bottom: 5%; /*changing from 25 from the mobile to 5% */
+            padding-right: 3%;
+            padding-left: 7%;
+            padding-top:15%;
+        } 
+    
+        .image-gallery p{
+            padding-left: 10%;
+            font-size: 1.5em;
+        } 
+      
+    /*ABOUT ME PAGE **************************************************************************************************************************************************************************/
+    
+    
+    .about-me {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .about-me p{
+        padding-top: 35%;
+        padding-right: 10%;
+        font-size: 1.7em;
+    }
+
+    .about-me img{
+        width: 100%;
+        padding-top: 0%;
+    }
+
+.flip-card { 
+    background-color: transparent;
+    width: 70%;
+    height: 600px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner,.flip-card-inner:focus {
+    transform: rotateY(180deg);
+  }
+
+    .flip-card-front, .flip-card-back {  /* this is the actual image width*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    color: black;
+  }
+  
+  .flip-card-back {
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+/* DIGITALARTSCREEN***************************************************************************************************************************************************************************/
+    
+    .parallaxscroll section {
+      background-attachment: fixed;
+      background-size: 100% auto;
+      display: flex;
+    }
+    
+
+@media screen and (min-width: 1025px){ /*widescreenview  widescreenview  widescreenview widescreenview widescreenview widescreenview widescreenview widescreenview widescreenview widescreenview widescreenview  */
+
+    .label {
+        font-size: 4em; 
+        left: 90%;
+    }
+    
+    .navbar .container-flex ul {
+        width: 50%;
+        padding-left: 3%;
+    }  
+
+
+    .navbar .container-flex ul li {
+    padding: 0%;
+} 
+
+    
+    .logo {
+        font-size: 2.25em;
+        padding-left: 4%;
+        padding-top: 2.5%;
+        padding-bottom: 3%;
+    }
+
+    .main-text {
+        padding-left: 4%;
+        margin-top: 0%;
+    }
+    
+    .navbar a{
+        font-size: 1em;
+    }
+
+    .navbar{
+        height: 70px;
+        color: white;
+        position:
+    }
+    
+    .navbar ul{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding-top: 0%;
+    }
+
+/* MAKING MAIN PAGE TEXT BIGGER */
+    .main-text h1{
+        font-size: 3.5em;
+        padding-top: 5%;
+        padding-left: 0%;
+    }
+
+    .main-text p{
+        font-size: 1.5em;
+        padding-left: 0%;
+    }
+
+/* HOME PAGE SECTIONS RESIZING */
+
+.one img{
+    width: 100vh;
+}
+
+.two img{
+    padding-top: 5%;
+}
+
+.scrolltext {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.scrolltext2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.scrolltext p{
+    font-size: 1.5em;
+    padding-top: 36%;
+    padding-left: 15%;
+}
+
+.scrolltext2 p{
+    font-size: 1.5em;
+    padding-top: 25%;
+    padding-left: 15%;
+}
+
+/*ABOUT ME PAGE *************************************************************************************/
+.about-me {
+    /* display: flex; */
+    flex-direction: row;
+    padding-left: 5%;
+padding-right: 5%;}
+
+
+.about-me p{
+    padding-left: 5%;
+    font-size: 1.5em;
+    width: 60vw;
+}
+
+.about-me img{
+    padding-right: 10%;
+    padding-top: 10%;
+}
+
+/*FLIP CARD*/
+
+.flip-card {  /* this is the height of the box behind the image w the orange text */
+    width: 50vw;
+  }
+  
+
+  .flip-card-back {
+    width: 120%;
+  }
+
+
+/*UI/UX PAGE**************************************************************************************/
+.image-galleryone {
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+}
+
+.image-galleryone {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.image-gallerytwo {
+   padding-left: 7%;
+   padding-right: 7%;
+}  
+
+.image-gallerytwo {
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    padding-bottom: 5%;
+    padding-right: 3%;
+    padding-left: 3%; 
+}
+  
+ /* DESIGN PAGE ***************************************************************************************/
+
+ .image-gallery { 
+        grid-template-columns: 1fr 1fr; 
+    } 
+
+    .image-gallery p{
+        padding-bottom: 10%;
+        padding-right: 30%;
+        padding-left: 0%;
+        padding-top: 20%;
+    } 
+  
+    .image-gallery img{
+        height: 95%;
+        padding-left: 15%;
+        padding-bottom: 10%;
+        padding-right: 5%;
+    }
+
+
+
+/* DIGITAL ART PAGE PARALLAX IMAGES **************************************************************/
+
+.parallaxscroll section { 
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .parallaxscroll section h1 {
+    margin: auto;
+    color: white;
+    font-size: 4.5em;
+    text-align: right;
+    padding-left: 40%;
+    font-weight: bold;
+  }
+
+  .parallaxscroll section:first-of-type {
+    background-color:#7b68ee
+    ;
+  }
+  
+  .parallaxscroll section:nth-of-type(2) {
+    background-color: #228b22
+
+    ;
+  }
+  .parallaxscroll section:last-of-type {
+    background-color:#4169e1
+    ;  }
+
+
+/*CONTACT PAGE **************************************************************************************/
+
+#mainsection {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 2%;
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+    .wave {
+        animation: none;
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: none;
+      }
+
+ .parallaxscroll section {
+     background-attachment: scroll;
+ }
+
+ .progress-container {
+     background: black;
+ }
+
+ .progress-bar {
+     background: black;
+ }
+
+
+
+ 
+
+
+ 
+ 
